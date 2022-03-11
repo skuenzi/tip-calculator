@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <style>
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src='./images/logo.svg'/>
+  </header>
+
+  <main class="container">
+    <section class="bill">
+      <h4 class="section-title">Bill</h4>
+      <label class="total-bill">
+        <img src='./images/icon-dollar.svg' class="dollar-icon"/>
+        <input type='text' class="total-bill-input"/>
+      </label>
+    </section>
+
+    <section class="tip">
+      <h4 class="section-title">Select Tip %</h4>
+      <button class="btn perc-btn">5%</button>
+      <button class="btn perc-btn">10%</button>
+      <button class="btn perc-btn">15%</button>
+      <button class="btn perc-btn">25%</button>
+      <button class="btn perc-btn">50%</button>
+      <button class="btn perc-btn custom-btn">Custom</button>
+    </section>
+
+    <section class="people">
+      <h4 class="section-title">Number of People</h4>
+      <label class="total-people">
+        <img src='./images/icon-person.svg' class="person-icon"/>
+        <input type='text' class="total-people-input"/>
+      </label>
+    </section>
+
+    <section class="result">
+      <h4 class="section-title">Tip Amount<span class="sub-text">/ person</span></h4>
+      <h3 class="end-calc">$</h3>
+      <h4 class="section-title">Total<span class="sub-text">/ person</span></h4>
+      <h3 class="end-calc">$</h3>
+      <button class="reset-btn btn">reset</button>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sara Kuenzi</a>.
+  </div>
+</body>
+</html>
