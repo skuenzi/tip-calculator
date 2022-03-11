@@ -5,57 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <style>
-  </style>
 </head>
 <body>
 
-  <header>
-    <img src='./images/logo.svg'/>
+  <header class="header">
+    <img src='./images/logo.svg' alt='page title: splitter' />
   </header>
 
   <main class="container">
     <section class="bill">
       <h4 class="section-title">Bill</h4>
-      <label class="total-bill">
+      <div class="total-bill label">
         <img src='./images/icon-dollar.svg' class="dollar-icon"/>
-        <input type='text' class="total-bill-input"/>
-      </label>
+      </div>
+      <input type='text' class="input total-bill-input"/>
     </section>
 
     <section class="tip">
       <h4 class="section-title">Select Tip %</h4>
-      <button class="btn perc-btn">5%</button>
-      <button class="btn perc-btn">10%</button>
-      <button class="btn perc-btn">15%</button>
-      <button class="btn perc-btn">25%</button>
-      <button class="btn perc-btn">50%</button>
-      <button class="btn perc-btn custom-btn">Custom</button>
+      <div class="btn-container">
+        <button class="btn perc-btn">5%</button>
+        <button class="btn perc-btn">10%</button>
+        <button class="btn perc-btn">15%</button>
+        <button class="btn perc-btn">25%</button>
+        <button class="btn perc-btn">50%</button>
+        <input class="btn perc-btn custom-btn input" placeholder='Custom'/>
+      </div>
+      
     </section>
 
     <section class="people">
       <h4 class="section-title">Number of People</h4>
-      <label class="total-people">
+      <div class="total-people label">
         <img src='./images/icon-person.svg' class="person-icon"/>
-        <input type='text' class="total-people-input"/>
-      </label>
+      </div>
+      <input type='text' class="input total-people-input"/>
     </section>
 
     <section class="result">
-      <h4 class="section-title">Tip Amount<span class="sub-text">/ person</span></h4>
+      <div class="result-section">
+        <h4 class="section-title">Tip Amount<span class="sub-text">/ person</span></h4>
       <h3 class="end-calc">$</h3>
-      <h4 class="section-title">Total<span class="sub-text">/ person</span></h4>
-      <h3 class="end-calc">$</h3>
+      </div>
+      <div class="result-section">
+        <h4 class="section-title">Total<span class="sub-text">/ person</span></h4>
+        <h3 class="end-calc">$</h3>
+      </div>
       <button class="reset-btn btn">reset</button>
     </section>
   </main>
 
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Sara Kuenzi</a>.
-  </div>
+  </div> -->
 </body>
 </html>
