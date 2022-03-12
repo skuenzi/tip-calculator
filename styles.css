@@ -45,10 +45,6 @@ body {
     padding: 1em 1em 0;
 }
 
-.total-bill {
-    width: 100%;
-}
-
 .input {
     border: none;
     background-color: var(--verylightgrayishcyan);
@@ -58,10 +54,16 @@ body {
     text-align: right;
     font-weight: 700;
     width: 100%;
+    border-radius: 5px;
+    font-family: 'Space Mono', monospace;
+    border:var(--verylightgrayishcyan) 2px solid;
 }
+
+
  .label {
      position: absolute;
      margin-left: .75em;
+     padding-top: .3em;
  }
 
  .btn-container {
@@ -79,28 +81,84 @@ body {
      padding: .25em 1em;
      font-family: 'Space Mono', monospace;
      border-radius: 5px;
- }
+     border:var(--verydarkcyan) 2px solid;
 
- .btn:active {
-     background-color: var(--strongcyan);
  }
-
- .btn.custom-btn {
+ .custom-btn {
      color: var(--darkgrayishcyan);
      background-color: var(--verylightgrayishcyan);
      font-weight: 700;
      text-align: right;
+     font-family: 'Space Mono', monospace;
+     border:var(--verylightgrayishcyan) 2px solid;
  }
 
+ .btn:active {
+     background-color: var(--strongcyan);
+     color: var(--verydarkcyan);
+ }
+ 
+ .input:focus,
+ .btn:focus {
+    outline: var(--strongcyan);
+     color: var(--verydarkcyan);
+     border:var(--strongcyan) 2px solid;
+ }
+
+ .btn:focus {
+    border:var(--strongcyan) 2px solid;
+     color: var(--verydarkcyan);
+     background-color: var(--strongcyan);
+
+ }
+
+
+
  .result {
+     margin-top: 1.5em;
      background-color: var(--verydarkcyan);
      border-radius: 15px;
      text-align: center;
+     color: var(--verylightgrayishcyan);
+     padding: 1em .5em;
  }
 
  .result-section {
      display: flex;
+     align-items: center;
+    justify-content: space-between;
  }
+
+ .result-section .section-title {
+     text-align: left;
+ }
+
+
+ .sub-text {
+     font-size: .75em;
+     color: var(--strongcyan);
+     display: flex;
+ }
+
+ .end-calc {
+     color: var(--strongcyan);
+     font-size: 28px;
+ }
+
+ .reset-btn {
+     text-transform: uppercase;
+     color: var(--verydarkcyan);
+     background-color: var(--strongcyan);
+     width: 90%;
+     font-weight: 700;
+    border:var(--strongcyan) 2px solid;
+    margin-top: .5em;
+ }
+
+ .reset-btn:active {
+     background-color: var(--verylightgrayishcyan);
+ }
+ 
 
 
 .attribution { 
