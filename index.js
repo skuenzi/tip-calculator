@@ -22,24 +22,30 @@ function getValue (e) {
 billInput.addEventListener('input', getValue)
 peopleInput.addEventListener('input', getValue)
 custTipInput.addEventListener('input', getValue)
+custTipInput.addEventListener('input', handleCustTip)
+peopleInput.addEventListener('input', getTotals)
+billInput.addEventListener('input', getTotals)
+custTipInput.addEventListener('blur', getTotals)
+billInput.addEventListener('blur', checkFields)
+peopleInput.addEventListener('blur', checkFields)
+resetBtn.addEventListener('click', reset)
 
-
-// get tip percentage
-
-let tipPercentage
 let percentageBtns
-
 document.addEventListener('DOMContentLoaded', () => { // wait for DOM content to load, then add event listener to each button
     percentageBtns = document.getElementsByClassName('perc-btn')
 
     for(let i = 0; i < percentageBtns.length; i++) {
         percentageBtns[i].addEventListener('click', getPercentage)
-        percentageBtns[i].addEventListener('blur', getTotals)
+        percentageBtns[i].addEventListener('click', getTotals)
 
     }
 
 })
-custTipInput.addEventListener('input', handleCustTip)
+
+
+// get tip percentage
+
+let tipPercentage
 
 function getPercentage (e) {
     tipPercentage = parseInt(e.target.value, 10)
@@ -58,27 +64,18 @@ function handleCustTip (e) {
     }
 }
 
-
-
 // get tip and total /person
 
 let tipPerPerson = document.getElementsByClassName('end-calc-tip')[0]
 let totalPerPerson = document.getElementsByClassName('total')[0]
 let totalTip
 
-peopleInput.addEventListener('change', getTotals)
-custTipInput.addEventListener('blur', getTotals)
 
 
 
 function getTotals (e) {
     totalTip = bill * (tipPercentage/100)
-
-    if (e.target.classList.contains('perc') && people && bill) {
-        tipPerPerson.innerHTML = formatter.format((totalTip / people))
-        totalPerPerson.innerHTML = formatter.format((bill + totalTip) / people)
-    }  
-    if (tipPercentage && bill && people) {
+    if (tipPercentage > 0 && bill > 0 && people > 0) {
         tipPerPerson.innerHTML = formatter.format((totalTip / people))
         totalPerPerson.innerHTML = formatter.format((bill + totalTip) / people)
     }
@@ -94,15 +91,14 @@ let formatter = new Intl.NumberFormat(undefined, {
 
 const resetBtn = document.getElementsByClassName('reset-btn')[0]
 
-resetBtn.addEventListener('click', reset)
 
 function reset () {
-    billInput.value = 0
-    peopleInput.value = 0 
+    billInput.value = ''
+    peopleInput.value = ''
     for(let i = 0; i < percentageBtns.length; i++) {
         percentageBtns[i].classList.remove('selected')
     }
-    custTipInput.value = 'Custom'
+    custTipInput.value = ''
     tipPerPerson.innerHTML = '--'
     totalPerPerson.innerHTML = '--'
 }
@@ -127,6 +123,3 @@ function checkFields (e) {
         }
     }
 }
-
-billInput.addEventListener('blur', checkFields)
-peopleInput.addEventListener('blur', checkFields)
